@@ -645,9 +645,8 @@ def write_video_output(frame, output_img):
 def write_image_output(output_img, content_img, style_imgs, init_img):
   out_dir = os.path.join(args.img_output_dir, str(args.max_iterations))
   maybe_make_directory(out_dir)
-  img_path = os.path.join(out_dir, args.img_output_dir+'-'+str(args.max_iterations)+'.png')
-  content_path = os.path.join(out_dir, 'content.png')
-  init_path = os.path.join(out_dir, 'init.png')
+  img_path = os.path.join(out_dir, args.img_output_dir+'-'+str(str(args.args.round_number).zfill(3))+'.png')
+
 
   write_image(img_path, output_img)
   write_image(content_path, content_img)
